@@ -1,0 +1,423 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aquastella</title>
+<meta name="description" content="Aquastella — home of Aquastella Films, the In Plain Sight novels, the Aquastella Society and the Aquastella Foundation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Jost:wght@400;500&display=swap">
+<style>
+/* Layout: a night-sea page — one centered column, bands that deepen as you scroll "down" into the water; the rising star is the only ornament. */
+:root{
+  --abyss:#08121D;
+  --deep:#0D1B2B;
+  --line:#22354B;
+  --ivory:#ECE5D5;
+  --mist:#A7B1BC;
+  --gold:#C9A45C;
+  --gold-dim:#8E7442;
+  --display:'Cormorant Garamond','Cormorant',Garamond,'Times New Roman',serif;
+  --body:'Newsreader',Georgia,'Times New Roman',serif;
+  --label:'Jost','Futura','Century Gothic',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--abyss);color:var(--ivory);font-family:var(--body);font-size:1.1rem;line-height:1.65}
+a{color:var(--gold)}
+a:hover{color:var(--ivory)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+.eyebrow{font-family:var(--label);font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.lede{color:var(--mist);max-width:62ch}
+
+/* Header */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 32px;flex-wrap:wrap;padding-block:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ivory)}
+.brand svg{width:34px;height:31px}
+.brand span{font-family:var(--display);font-size:1.35rem;letter-spacing:.24em;font-weight:600}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 26px}
+nav a{font-family:var(--label);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mist);padding-block:10px;display:inline-block}
+nav a:hover{color:var(--gold)}
+
+/* Hero */
+.hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px;padding-block:clamp(56px,10vw,120px) clamp(48px,8vw,96px)}
+.hero-mark{width:min(240px,56vw);height:auto}
+.hero-mark .rise{animation:rise 2.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{transform:translateY(14px)}to{transform:translateY(0)}}
+.hero h1{font-size:clamp(3rem,10vw,6.4rem);letter-spacing:.22em;padding-left:.22em;font-weight:500}
+.motto{font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,3vw,1.7rem);color:var(--gold)}
+.hero .lede{text-align:center}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.btn{font-family:var(--label);font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border:1px solid var(--gold);color:var(--abyss);background:var(--gold);cursor:pointer;display:inline-block}
+.btn:hover{background:var(--ivory);border-color:var(--ivory);color:var(--abyss)}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn.ghost:hover{color:var(--abyss);background:var(--gold)}
+
+/* Sections */
+section{border-top:1px solid var(--line)}
+section.band{background:var(--deep)}
+section > .wrap{padding-block:clamp(56px,8vw,104px);display:flex;flex-direction:column;gap:40px}
+.head{display:flex;flex-direction:column;gap:14px}
+.head h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+
+/* Films slate */
+.slate{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.slate li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2fr) auto;gap:8px 40px;align-items:baseline;padding-block:26px;border-bottom:1px solid var(--line)}
+.slate h3{font-size:1.9rem}
+.slate .kind{font-family:var(--label);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-top:6px}
+.slate p{color:var(--mist);min-width:0}
+.status{font-family:var(--label);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:6px 12px;white-space:nowrap}
+
+/* Books */
+.books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
+.book{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;align-items:start}
+.cover{aspect-ratio:2/3;max-width:100%;background:var(--abyss);border:1px solid var(--gold-dim);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:18px 10px;text-align:center}
+.cover svg{width:56px;height:51px}
+.cover b{font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:.08em;line-height:1.15}
+.cover small{font-family:var(--label);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.book .no{font-family:var(--label);font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.book h3{font-size:2rem;margin:6px 0 12px}
+.book p{color:var(--mist)}
+.book .status{display:inline-block;margin-top:16px}
+
+/* Society */
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line)}
+.tier{padding:30px 28px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.tier + .tier{border-left:1px solid var(--line)}
+.tier .edition{font-family:var(--label);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist)}
+.tier h3{font-size:2rem;color:var(--gold)}
+.tier ul{margin:0;padding-left:1.1em;color:var(--ivory)}
+.tier li{margin-block:4px}
+.tier.inner{background:var(--abyss)}
+.redeem{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px;align-items:start}
+.redeem h3{font-size:1.9rem;margin-bottom:10px}
+.redeem p{color:var(--mist)}
+form{display:flex;flex-direction:column;gap:16px}
+label{font-family:var(--label);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;flex-direction:column;gap:8px}
+input{font:inherit;font-family:var(--body);font-size:1.05rem;color:var(--ivory);background:var(--abyss);border:1px solid var(--line);padding:13px 14px;width:100%}
+input:focus{border-color:var(--gold);outline:none}
+input.code{font-family:var(--label);letter-spacing:.24em;text-transform:uppercase}
+.note{font-size:.98rem;color:var(--gold);min-height:1.6em}
+form .btn{align-self:flex-start}
+
+/* Foundation */
+.aims{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.aim{border-top:1px solid var(--gold-dim);padding-top:18px;display:flex;flex-direction:column;gap:8px}
+.aim h3{font-size:1.6rem}
+.aim p{color:var(--mist)}
+.fine{font-size:.95rem;color:var(--mist);border-left:2px solid var(--gold-dim);padding-left:16px;max-width:70ch}
+
+/* Contact + footer */
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+.email{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.4rem);user-select:all;word-break:break-all}
+.copy{font-family:var(--label);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;background:none;border:1px solid var(--gold-dim);color:var(--gold);padding:12px 18px;cursor:pointer}
+.copy:hover{border-color:var(--gold)}
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-block:32px;font-family:var(--label);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+
+@media (max-width:860px){
+  .slate li{grid-template-columns:minmax(0,1fr)}
+  .slate .status{justify-self:start}
+  .books,.redeem{grid-template-columns:minmax(0,1fr)}
+  .tiers{grid-template-columns:minmax(0,1fr)}
+  .tier + .tier{border-left:0;border-top:1px solid var(--line)}
+  .aims{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:460px){
+  .book{grid-template-columns:110px minmax(0,1fr);gap:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-mark .rise{animation:none}
+}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="above"><rect x="-110" y="-100" width="220" height="100"></rect></clipPath>
+    <clipPath id="below">
+      <rect x="-110" y="5" width="220" height="6"></rect>
+      <rect x="-110" y="17" width="220" height="5"></rect>
+      <rect x="-110" y="28" width="220" height="4"></rect>
+      <rect x="-110" y="39" width="220" height="3.2"></rect>
+      <rect x="-110" y="49" width="220" height="2.6"></rect>
+      <rect x="-110" y="59" width="220" height="2"></rect>
+      <rect x="-110" y="68" width="220" height="1.6"></rect>
+      <rect x="-110" y="77" width="220" height="1.2"></rect>
+    </clipPath>
+    <path id="star" d="M0,-90 L6,-14 L20,-20 L14,-6 L64,0 L14,6 L20,20 L6,14 L0,90 L-6,14 L-20,20 L-14,6 L-64,0 L-14,-6 L-20,-20 L-6,-14 Z"></path>
+    <symbol id="mark" viewBox="-110 -100 220 200">
+      <use href="#star" fill="#C9A45C" clip-path="url(#above)"></use>
+      <use href="#star" fill="#C9A45C" clip-path="url(#below)" opacity="0.7"></use>
+      <path d="M-106,0 H106" stroke="#C9A45C" stroke-width="1.6"></path>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Aquastella home">
+      <svg aria-hidden="true"><use href="#mark"></use></svg>
+      <span>AQUASTELLA</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#films">Films</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#society">Society</a></li>
+        <li><a href="#foundation">Foundation</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <svg class="hero-mark" viewBox="-110 -100 220 200" role="img" aria-label="The Aquastella star rising from the sea">
+        <g class="rise"><use href="#star" fill="#C9A45C" clip-path="url(#above)"></use></g>
+        <use href="#star" fill="#C9A45C" clip-path="url(#below)" opacity="0.7"></use>
+        <path d="M-106,0 H106" stroke="#C9A45C" stroke-width="1.4"></path>
+      </svg>
+      <h1>AQUASTELLA</h1>
+      <p class="motto">E profundis lux. From the depths, light.</p>
+      <p class="lede">Aquastella is the home of Aquastella Films, the <em>In Plain Sight</em> novels, and the Society that keeps their secrets. Our stories are restrained, intimate, and drawn from lived experience, from Hampton Roads to the shores of Guam.</p>
+      <div class="actions">
+        <a class="btn" href="#society">Join the Society</a>
+        <a class="btn ghost" href="#books">Read the books</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="films" class="band" aria-labelledby="films-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Aquastella Films</p>
+        <h2 id="films-h">An independent production company in Orlando, Florida</h2>
+        <p class="lede">We make films about people the world overlooks, told with patience and close attention to the places they come from.</p>
+      </div>
+      <ul class="slate">
+        <li>
+          <div>
+            <h3>Ghost: The Last Call</h3>
+            <p class="kind">Short film · Drama</p>
+          </div>
+          <p>A restaurant owner holds his business and his marriage together while his wife fights addiction. Inspired by life in Hampton Roads, Virginia.</p>
+          <span class="status">In development</span>
+        </li>
+        <li>
+          <div>
+            <h3>In Plain Sight</h3>
+            <p class="kind">Feature · Supernatural drama</p>
+          </div>
+          <p>The screen adaptation of <em>In Plain Sight: A Modern Vampire Tale</em>.</p>
+          <span class="status">Screenplay complete</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="books" aria-labelledby="books-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">The novels</p>
+        <h2 id="books-h">In Plain Sight</h2>
+        <p class="lede">A modern vampire series by Kevin B. Young.</p>
+      </div>
+      <div class="books">
+        <article class="book">
+          <div class="cover" aria-hidden="true">
+            <small>Book One</small>
+            <b>In Plain<br>Sight</b>
+            <svg><use href="#mark"></use></svg>
+          </div>
+          <div>
+            <p class="no">Book One</p>
+            <h3>In Plain Sight: A Modern Vampire Tale</h3>
+            <p>Rudolf survives by hiding where no one thinks to look: in the open, among the living.</p>
+            <span class="status">Coming soon</span>
+          </div>
+        </article>
+        <article class="book">
+          <div class="cover" aria-hidden="true">
+            <small>Book Two</small>
+            <b>Aqua<br>Stella</b>
+            <svg><use href="#mark"></use></svg>
+          </div>
+          <div>
+            <p class="no">Book Two</p>
+            <h3>Aqua Stella</h3>
+            <p>Rudolf goes over the rail of a trading vessel in the South Pacific and swims up from the abyss to the shores of Guam. On a hillside above the sea stands an abandoned chapel called Aqua Stella.</p>
+            <span class="status">In development</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="society" class="band" aria-labelledby="society-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">The Aquastella Society</p>
+        <h2 id="society-h">Every reader is invited in</h2>
+        <p class="lede">Each copy of the novels carries a membership code inside the back cover. Redeem it here to join the Society. The edition you hold sets your rank.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <p class="edition">Paperback &amp; ebook</p>
+          <h3>Initiate</h3>
+          <ul>
+            <li>Digital certificate bearing the Society seal</li>
+            <li>The Society newsletter</li>
+            <li>A members-only chapter</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <p class="edition">Hardcover</p>
+          <h3>Fellow</h3>
+          <ul>
+            <li>Everything for Initiates</li>
+            <li>Printed certificate by mail</li>
+            <li>Early access to the next book</li>
+            <li>Invitations to virtual readings</li>
+          </ul>
+        </div>
+        <div class="tier inner">
+          <p class="edition">Signed collector's edition</p>
+          <h3>Inner Circle</h3>
+          <ul>
+            <li>Everything for Fellows</li>
+            <li>A wax-sealed letter from Rudolf</li>
+            <li>Numbered membership card</li>
+            <li>Invitations to live events</li>
+          </ul>
+        </div>
+      </div>
+      <div class="redeem">
+        <div>
+          <h3>Redeem your code</h3>
+          <p>Enter the code from inside your book and the email where you'd like your certificate sent.</p>
+        </div>
+        <form id="redeem-form" novalidate>
+          <label for="code">Membership code
+            <input id="code" name="code" class="code" type="text" autocomplete="off" placeholder="AQS-XXXX-XXXX" required>
+          </label>
+          <label for="email">Email
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </label>
+          <button class="btn" type="submit">Join the Society</button>
+          <p class="note" id="redeem-note" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="foundation" aria-labelledby="foundation-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">The Aquastella Foundation</p>
+        <h2 id="foundation-h">Giving back to the places our stories come from</h2>
+        <p class="lede">The Aquastella Foundation is being formed to carry the series' themes into the real world. These are the areas it plans to support.</p>
+      </div>
+      <div class="aims">
+        <div class="aim">
+          <h3>Sacred places</h3>
+          <p>Preserving historic chapels and sites of worship before they are lost to weather and time.</p>
+        </div>
+        <div class="aim">
+          <h3>Heritage of Guåhan</h3>
+          <p>Supporting CHamoru culture, language and the arts on the island where Book Two is set.</p>
+        </div>
+        <div class="aim">
+          <h3>Young writers</h3>
+          <p>Scholarships for young storytellers in Guam and Hampton Roads, Virginia.</p>
+        </div>
+      </div>
+      <p class="fine">The Aquastella Foundation is in formation and is not yet a registered charity. It is not accepting donations at this time.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="band" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-h">Press, producers and partners</h2>
+        <p class="lede">For film inquiries, rights, events or Society questions, write to us.</p>
+      </div>
+      <div class="contact">
+        <span class="email" id="email-text">hello@aquastella.com</span>
+        <button class="copy" type="button" id="copy-email">Copy email</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Aquastella</span>
+    <span>Orlando, Florida · Guåhan</span>
+  </div>
+</footer>
+
+<script>
+/* To collect real sign-ups once the site is live, paste a form service URL
+   (for example a Formspree endpoint) between the quotes below. */
+const FORM_ENDPOINT = "";
+
+const form = document.getElementById('redeem-form');
+const note = document.getElementById('redeem-note');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const code = form.code.value.trim();
+  const email = form.email.value.trim();
+  if (!code) { note.textContent = 'Enter the membership code printed inside your book.'; form.code.focus(); return; }
+  if (!/^\S+@\S+\.\S+$/.test(email)) { note.textContent = 'Enter a valid email address so we can send your certificate.'; form.email.focus(); return; }
+  if (!FORM_ENDPOINT) {
+    note.textContent = 'Society registration opens with the release of the books. Keep your code; it will work then.';
+    return;
+  }
+  note.textContent = 'Sending…';
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code, email })
+    });
+    if (!res.ok) throw new Error();
+    note.textContent = 'Welcome to the Society. Your certificate is on its way to ' + email + '.';
+    form.reset();
+  } catch {
+    note.textContent = 'We couldn’t submit your code. Check your connection and try again.';
+  }
+});
+
+document.getElementById('copy-email').addEventListener('click', async (e) => {
+  const btn = e.currentTarget;
+  const text = document.getElementById('email-text').textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.textContent = 'Copied';
+  } catch {
+    const r = document.createRange();
+    r.selectNodeContents(document.getElementById('email-text'));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    btn.textContent = 'Selected';
+  }
+  setTimeout(() => { btn.textContent = 'Copy email'; }, 1800);
+});
+</script>
+</body>
+</html>
+
+</body></html>
